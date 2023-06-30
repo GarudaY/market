@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0 40px;
+
+  &__logo {
+    margin-right: 10px;
+  }
+
+  &__leftSide {
+    width: 100%;
+    max-width: 18%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__rightSide {
+    display: flex;
+    width: 100%;
+    max-width: 40%;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__navLinks {
+      display: flex;
+      justify-content: space-between;
+      white-space: nowrap;
+    }
+
+    &__navBox {
+      flex-shrink: 0;
+      width: 30px;
+      margin-left: 50px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.flowers-banner {
+  background-color: rgba(161, 226, 235, 1);
+  width: 100%;
+  max-height: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__content {
+    margin: 0 20px 0 50px;
+    color: white;
+
+    &__title {
+      font-size: 80px;
+      margin-bottom: 10px;
+    }
+
+    &__description {
+      font-size: 63px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 55px;
+  }
+}
