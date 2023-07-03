@@ -1,0 +1,16 @@
+.categories-wrapper {
+  padding: 20px;
+
+  &__header {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+    &__title {
+      font-size: 40px;
+      margin-right: 100px;
+    }
+  }
+  &__cards-wrapper {
+    display: flex;
+  }
+}

@@ -1,34 +1,41 @@
 .my-button {
-&__full-btn {
-   border-radius: 5px;
-   border: 2px solid transparent;
-   background-color: var(--green-color);
-   color: white;
-   font-weight: 700;
-   line-height: 20px;
-   letter-spacing: 0.5px;
- }
+  &__full-btn {
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: var(--green-color);
+    color: white;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
 
-&__empty-btn {
-   border-radius: 25px;
-   border: 2px solid white;
-   background-color: transparent;
-   letter-spacing: 3px;
-   color: white;
-   font-weight: 700;
- }
+  &__empty-btn {
+    border-radius: 25px;
+    border: 2px solid white;
+    background-color: transparent;
+    letter-spacing: 3px;
+    color: white;
+    font-weight: 700;
+  }
 
-&__img-btn {
-   all: unset;
-   cursor: pointer;
- }
+  &__img-btn {
+    all: unset;
+    cursor: pointer;
+  }
 
-&__white-btn {
-   border-radius: 15px;
-   border: 2px solid white;
-   background-color: white;
-   letter-spacing: 1px;
-   color: black;
-   font-weight: 700;
- }
+  &__white-btn {
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: white;
+    letter-spacing: 1px;
+    color: black;
+    font-weight: 700;
+  }
+  &__gray-btn {
+    border-radius: 0;
+    border: 2px solid gray;
+    color: gray;
+    font-weight: 700;
+    background-color: transparent;
+  }
 }

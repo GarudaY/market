@@ -1,7 +1,7 @@
 import React from 'react'
 import MyButton from '../MyButton/MyButton'
 import './Header.scss'
-import HeaderLink from '../Link/HeaderLink'
+import HeaderLink from '../HeaderLink/HeaderLink'
 
 const Header = () => {
   return (
@@ -29,7 +29,7 @@ const Header = () => {
         </div>
         <div className='header__rightSide__navBox'>
           <MyButton
-            link='/allProducts'
+            link='/SchoppingCart'
             width='30'
             height='30'
             image='/static/box.png'

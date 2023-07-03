@@ -1,9 +1,22 @@
 import React from 'react'
 import './MyButton.scss'
 
-const MyButton = ({ view, text, link, width, height, fontSize, image }) => {
+const MyButton = ({
+  view,
+  text,
+  link,
+  width,
+  height,
+  fontSize,
+  image,
+  onClick,
+}) => {
   const handleClick = () => {
-    window.location.href = link
+    if (onClick) {
+      onClick()
+    } else if (link) {
+      window.location.href = link
+    }
   }
 
   let className = 'my-button'
@@ -13,10 +26,11 @@ const MyButton = ({ view, text, link, width, height, fontSize, image }) => {
     className += '__empty-btn'
   } else if (view === 'white') {
     className += '__white-btn'
+  } else if (view === 'gray') {
+    className += '__gray-btn'
   } else if (image) {
     className += '__img-btn'
   }
-  console.log(className)
   return (
     <button
       className={className}

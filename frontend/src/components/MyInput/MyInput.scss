@@ -1,0 +1,24 @@
+.my-input {
+  width: 473px;
+  height: 75px;
+  border: transparent;
+  border-radius: 25px;
+  padding: 15px 50px;
+  color: darkgray;
+  font-weight: 600;
+  font-size: 18px;
+  &:focus-visible {
+    outline: none;
+  }
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
