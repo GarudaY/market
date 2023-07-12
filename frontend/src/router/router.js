@@ -4,7 +4,7 @@ import Categories from '../pages/Categories/Categories'
 import CategoryShowcase from '../pages/CategorySchowcase/CategoryShowcase'
 import MainPage from '../pages/MainPage/MainPage'
 import Error from '../pages/Error/Error'
-import ProductCard from '../pages/ProductCard/ProductCard'
+import ProductPage from '../pages/ProductPage/ProductPage'
 import SaleProducts from '../pages/SaleProducts/SaleProducts'
 import ShoppingCart from '../pages/ShoppingCart/ShoppingCart'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -17,7 +17,7 @@ const Router = () => {
       <Route path='/categories' element={<Categories />} />
       <Route path='/categotyShowcase' element={<CategoryShowcase />} />
       <Route path='/error' element={<Error />} />
-      <Route path='/productCard' element={<ProductCard />} />
+      <Route path='/productCard' element={<ProductPage />} />
       <Route path='/saleProducts' element={<SaleProducts />} />
       <Route path='/shoppingCart' element={<ShoppingCart />} />
     </Routes>

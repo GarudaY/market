@@ -10,6 +10,7 @@ const MyButton = ({
   fontSize,
   image,
   onClick,
+  fontWeight,
 }) => {
   const handleClick = () => {
     if (onClick) {
@@ -30,6 +31,9 @@ const MyButton = ({
     className += '__gray-btn'
   } else if (image) {
     className += '__img-btn'
+    if (text) {
+      className += '__with-text'
+    }
   }
   return (
     <button
@@ -38,11 +42,12 @@ const MyButton = ({
         width: `${width}px`,
         height: `${height}px`,
         fontSize: `${fontSize}px`,
+        fontWeight: `${fontWeight}px`,
       }}
       onClick={handleClick}
     >
-      {image && <img src={'static/box.png'} alt='' />}
-      <p style={{ fontSize: `${fontSize}px` }}>{text}</p>
+      {image && <img src={image} />}
+      {text && <p style={{ fontSize: `${fontSize}px` }}>{text}</p>}
     </button>
   )
 }

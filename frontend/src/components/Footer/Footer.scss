@@ -1,0 +1,58 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  &__content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    &__contacts {
+      width: 45%;
+      &__title {
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      &__handy {
+        font-size: 70px;
+        font-weight: 600;
+        white-space: nowrap;
+        margin-bottom: 30px;
+      }
+      &__btn {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+    &__adress {
+      width: 45%;
+      &__title {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      &__coordinates {
+        font-size: 45px;
+        font-weight: 600;
+        &:visited {
+          color: black;
+        }
+      }
+      &__descr {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      &__descrTime {
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+  &__map {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
