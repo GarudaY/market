@@ -1,19 +1,27 @@
 import React from 'react'
 import './CategoryCard.scss'
 import { Link } from 'react-router-dom'
-import categories from '../../pages/Categories/Categories'
 
-const CategoryCard = ({ id, title, image }) => {
-  const trimmedStr = title.replace(/\s/g, '')
+const CategoryCard = ({ id, title, image, onClick, active }) => {
+  const handleClick = () => {
+    onClick(id)
+  }
+
   return (
-    <Link className='card-wrapper' to={`/categories/${trimmedStr}`}>
-      <img
-        className='card-wrapper__img'
-        src={'http://localhost:3333' + image}
-        alt='Category Image'
-      ></img>
-      <h3 className='card-wrapper__title'>{title}</h3>
-    </Link>
+    <div>
+      <Link
+        className={`card-wrapper ${active ? 'active' : ''}`}
+        to={`/categories/${id}`}
+        onClick={handleClick}
+      >
+        <img
+          className='card-wrapper__img'
+          src={'http://localhost:3333' + image}
+          alt='Category Image'
+        />
+        <h3 className='card-wrapper__title'>{title}</h3>
+      </Link>
+    </div>
   )
 }
 

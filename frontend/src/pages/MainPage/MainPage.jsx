@@ -11,9 +11,12 @@ const MainPage = () => {
     <div>
       <Header></Header>
       <FlowersBanner></FlowersBanner>
-      <CategoriesPreviewShowcase></CategoriesPreviewShowcase>
+      <CategoriesPreviewShowcase
+        category='limited'
+        title='Catalog'
+      ></CategoriesPreviewShowcase>
       <DworfBanner></DworfBanner>
-      <ProductSmallSchowcase></ProductSmallSchowcase>
+      <ProductSmallSchowcase quantity='limited'></ProductSmallSchowcase>
       <Footer></Footer>
     </div>
   )

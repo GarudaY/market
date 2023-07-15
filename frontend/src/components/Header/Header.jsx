@@ -24,7 +24,7 @@ const Header = () => {
       <div className='header__rightSide'>
         <div className='header__rightSide__navLinks'>
           <HeaderLink text='Main Page' link='/'></HeaderLink>
-          <HeaderLink text='All Products' link='/allProducts'></HeaderLink>
+          <HeaderLink text='All Products' link='/categories/all'></HeaderLink>
           <HeaderLink text='All Sales' link='/allProducts'></HeaderLink>
         </div>
         <div className='header__rightSide__navBox'>

@@ -14,12 +14,16 @@ const ProductCard = ({ title, image, price, discontPrice }) => {
       </div>
       <div className='product-card-wrapper__prices'>
         <p className='product-card-wrapper__prices__price'>{price + '$'}</p>
-        <p className='product-card-wrapper__prices__discount'>
-          {discontPrice + '$'}
-        </p>
-        <p className='product-card-wrapper__prices__discPercentage'>
-          {Math.abs(discountPercentage) + '%'}
-        </p>
+        {discontPrice && (
+          <p className='product-card-wrapper__prices__discount'>
+            {discontPrice + '$'}
+          </p>
+        )}
+        {discontPrice && (
+          <p className='product-card-wrapper__prices__discPercentage'>
+            {Math.abs(discountPercentage) + '%'}
+          </p>
+        )}
       </div>
       <h1 className='product-card-wrapper__title'>{title}</h1>
     </div>

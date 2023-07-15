@@ -39,7 +39,7 @@ const DworfBanner = () => {
           on the first order
         </h2>
         <div className='dwarf-banner__contentSide__input'>
-          <MyInput onChange={handleInputChange} />
+          <MyInput view='handyNummer' onChange={handleInputChange} />
         </div>
         <div>
           <MyButton

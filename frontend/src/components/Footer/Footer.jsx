@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.scss'
 import MyButton from '../MyButton/MyButton'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
           <p className='footer__content__contacts__handy'>+49 999 999 99 99</p>
           <div className='footer__content__contacts__btn'>
             <MyButton
-              image='static/inst.png'
+              image='/static/inst.png'
               width='80'
               height='80'
               text='Instagram'
@@ -19,7 +20,7 @@ const Footer = () => {
               fontWeight='600'
             ></MyButton>
             <MyButton
-              image='static/whatsapp.png'
+              image='/static/whatsapp.png'
               width='80'
               height='80'
               text='WhatsApp'
@@ -30,12 +31,12 @@ const Footer = () => {
         </div>
         <div className='footer__content__adress'>
           <h2 className='footer__content__adress__title'>Adress</h2>
-          <a
+          <Link
             href='https://www.google.com/search?q=telranDE'
             className='footer__content__adress__coordinates'
           >
             Linkstraße 2, 8 OG, 10785, Berlin, Deutschland
-          </a>
+          </Link>
           <p className='footer__content__adress__descr'>Working Hours:</p>
           <p className='footer__content__adress__descrTime'>24 hours a day</p>
         </div>

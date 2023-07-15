@@ -1,0 +1,20 @@
+.sorting-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+  }
+  &__fromTo {
+    display: flex;
+    margin-right: 40px;
+  }
+  &__checkBox {
+    margin: 0 90px 0 20px;
+  }
+  &__select {
+    margin-left: 20px;
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import './MyButton.scss'
+import { Link } from 'react-router-dom'
 
 const MyButton = ({
   view,
@@ -12,11 +13,11 @@ const MyButton = ({
   onClick,
   fontWeight,
 }) => {
-  const handleClick = () => {
+  const handleClick = (event) => {
     if (onClick) {
       onClick()
     } else if (link) {
-      window.location.href = link
+      return link
     }
   }
 
@@ -36,19 +37,20 @@ const MyButton = ({
     }
   }
   return (
-    <button
-      className={className}
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        fontSize: `${fontSize}px`,
-        fontWeight: `${fontWeight}px`,
-      }}
-      onClick={handleClick}
-    >
-      {image && <img src={image} />}
-      {text && <p style={{ fontSize: `${fontSize}px` }}>{text}</p>}
-    </button>
+    <Link to={link} onClick={handleClick}>
+      <button
+        className={className}
+        style={{
+          width: `${width}px`,
+          height: `${height}px`,
+          fontSize: `${fontSize}px`,
+          fontWeight: `${fontWeight}px`,
+        }}
+      >
+        {image && <img src={image} />}
+        {text && <p style={{ fontSize: `${fontSize}px` }}>{text}</p>}
+      </button>
+    </Link>
   )
 }
 
