@@ -3,39 +3,42 @@
   flex-direction: column;
   width: 320px;
   margin-bottom: 40px;
-
-  &__container {
-    margin-bottom: 15px;
-    &__img {
-      width: 318px;
-      height: 350px;
+  &__link {
+    all: unset;
+    cursor: pointer;
+    &__container {
+      margin-bottom: 15px;
+      &__img {
+        width: 318px;
+        height: 350px;
+      }
     }
-  }
-  &__prices {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    margin-bottom: 15px;
-    &__price {
-      font-size: 30px;
-      font-weight: 600;
+    &__prices {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      margin-bottom: 15px;
+      &__price {
+        font-size: 30px;
+        font-weight: 600;
+      }
+      &__discount {
+        font-size: 20px;
+        font-weight: 500;
+        color: gray;
+        text-decoration: line-through;
+      }
+      &__discPercentage {
+        color: rgba(255, 50, 161, 1);
+        font-size: 20px;
+        font-weight: 600;
+      }
     }
-    &__discount {
-      font-size: 20px;
+    &__title {
+      font-size: 16px;
       font-weight: 500;
-      color: gray;
-      text-decoration: line-through;
+      padding: 0 20px;
     }
-    &__discPercentage {
-      color: rgba(255, 50, 161, 1);
-      font-size: 20px;
-      font-weight: 600;
-    }
-  }
-  &__title {
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0 20px;
   }
 }

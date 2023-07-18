@@ -7,12 +7,10 @@ import {
   loadCategories,
   selectCategory,
 } from '../../redux/actions/categoryActions'
-import { Link } from 'react-router-dom'
 
 const CategoriesPreviewShowcase = ({ category, title }) => {
   const categories = useSelector((state) => state.categories.categories)
   const dispatch = useDispatch()
-  const [selectedCategory, setSelectedCategory] = useState(null)
 
   useEffect(() => {
     dispatch(loadCategories())
@@ -29,17 +27,14 @@ const CategoriesPreviewShowcase = ({ category, title }) => {
           {title}
         </h2>
         {category === 'limited' && (
-          <Link to='/categories' className='my-link'>
-            {' '}
-            <MyButton
-              view='gray'
-              fontSize='12px'
-              width='120'
-              height='35'
-              text='All categories'
-              link='/categories'
-            />
-          </Link>
+          <MyButton
+            view='gray'
+            fontSize='12px'
+            width='120'
+            height='35'
+            text='All categories'
+            link='/categories'
+          />
         )}
       </div>
       <div

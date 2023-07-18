@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import MyButton from '../MyButton/MyButton'
 import './Header.scss'
 import HeaderLink from '../HeaderLink/HeaderLink'
@@ -8,7 +8,7 @@ const Header = () => {
     <div className='header'>
       <div className='header__leftSide'>
         <div className='header__logo'>
-          <img src='/static/logo.png' alt='logo'></img>
+          <img src='/static/logo.png' alt='logo' />
         </div>
         <div>
           <MyButton
@@ -18,14 +18,17 @@ const Header = () => {
             width='125'
             height='49'
             fontSize='16'
-          ></MyButton>
+          />
         </div>
       </div>
       <div className='header__rightSide'>
         <div className='header__rightSide__navLinks'>
-          <HeaderLink text='Main Page' link='/'></HeaderLink>
-          <HeaderLink text='All Products' link='/categories/all'></HeaderLink>
-          <HeaderLink text='All Sales' link='/allProducts'></HeaderLink>
+          <HeaderLink text='Main Page' link='/' />
+          <HeaderLink text='All Products' link='/categories/all' />
+          <HeaderLink
+            text='All Sales'
+            link='/categories/sales?discounted=true'
+          />
         </div>
         <div className='header__rightSide__navBox'>
           <MyButton
@@ -33,7 +36,7 @@ const Header = () => {
             width='30'
             height='30'
             image='/static/box.png'
-          ></MyButton>
+          />
         </div>
       </div>
     </div>

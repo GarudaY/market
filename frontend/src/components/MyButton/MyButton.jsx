@@ -47,7 +47,7 @@ const MyButton = ({
           fontWeight: `${fontWeight}px`,
         }}
       >
-        {image && <img src={image} />}
+        {image && <img src={image} alt='sad' />}
         {text && <p style={{ fontSize: `${fontSize}px` }}>{text}</p>}
       </button>
     </Link>

@@ -10,7 +10,6 @@ router.get('/all', (req, res) =>{
     
     async function all(){
         const all = await Product.findAll();
-        console.log(all);
         res.json(all);
     }
     all();

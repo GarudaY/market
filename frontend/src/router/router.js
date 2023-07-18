@@ -18,7 +18,7 @@ const Router = () => {
         element={<CategoryShowcase />}
       />{' '}
       <Route path='/error' element={<Error />} />
-      <Route path='/productCard' element={<ProductPage />} />
+      <Route path='/product/:id' element={<ProductPage />} />
       <Route path='/saleProducts' element={<SaleProducts />} />
       <Route path='/shoppingCart' element={<ShoppingCart />} />
     </Routes>

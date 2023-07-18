@@ -12,13 +12,13 @@ const FlowersBanner = () => {
           view='white'
           text='Sale'
           fontSize='25'
-          link=''
+          link='/categories/sales?discounted=true'
           width='155'
           height='82'
         ></MyButton>
       </div>
       <div className='flowers-banner__image'>
-        <img src='/static/flowers.png'></img>
+        <img src='/static/flowers.png' alt='flowers'></img>
       </div>
     </div>
   )

@@ -1,17 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './MyInput.scss'
 
-const MyInput = ({ placeholder, view }) => {
-  const [value, setValue] = useState('')
-
+const MyInput = ({ view, onChange, value, placeholder, checked }) => {
   const handleChange = (event) => {
-    const inputValue = event.target.value
-    if (inputValue.length <= 11) {
-      setValue(inputValue)
-    }
+    const value = event.target.value
+    onChange(value)
   }
-
-  const handleSort = () => {}
 
   const renderInput = () => {
     switch (view) {
@@ -21,32 +15,29 @@ const MyInput = ({ placeholder, view }) => {
             className='fromTo'
             type='text'
             placeholder={placeholder}
-            onChange={handleSort}
-          />
-        )
-      case 'checkbox':
-        return (
-          <input className='checkbox' type='checkbox' onChange={handleSort} />
-        )
-      case 'select':
-        return (
-          <select className='select' onChange={handleSort}>
-            <option value=''>by default</option>
-            <option value=''>by price</option>
-            <option value=''>by alphabet</option>
-          </select>
-        )
-      default:
-        return (
-          <input
-            className='my-input'
-            type='number'
-            name='handyNumber'
-            placeholder='+49'
             value={value}
             onChange={handleChange}
           />
         )
+      case 'checkbox':
+        return (
+          <input
+            className='checkbox'
+            type='checkbox'
+            checked={checked}
+            onChange={handleChange}
+          />
+        )
+      case 'select':
+        return (
+          <select className='select' value={value} onChange={handleChange}>
+            <option value='default'>Default</option>
+            <option value='asc'>By Price Down</option>
+            <option value='desc'>By Price Up</option>
+          </select>
+        )
+      default:
+        return null
     }
   }
 

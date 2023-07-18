@@ -9,3 +9,9 @@ export const loadProducts = () => {
     }
   }
 }
+export const selectProduct = (product) => {
+  return {
+    type: 'SELECT_PRODUCT',
+    payload: product,
+  }
+}
