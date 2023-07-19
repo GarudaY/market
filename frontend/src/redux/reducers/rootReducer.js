@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import categoryReducer from './categoryReducer'
 import productsReducer from './productsReducer'
-import selectedProductReducer from './selectedProductReducer' // Исправлен импорт имени файла
+import selectedProductReducer from './selectedProductReducer'
 
 const rootReducer = combineReducers({
   categories: categoryReducer,

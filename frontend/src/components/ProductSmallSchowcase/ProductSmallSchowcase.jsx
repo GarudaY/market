@@ -96,11 +96,11 @@ const ProductSmallSchowcase = () => {
 
   const pageTitle =
     categoryName === 'all'
-      ? 'Все товары'
+      ? 'All products'
       : categoryName === 'sales'
-      ? 'Товары со скидкой'
+      ? 'Products with sale'
       : categories.find((category) => category.id === parseInt(categoryName))
-          ?.title || 'Распродажа'
+          ?.title || 'Sales'
 
   return (
     <div className='prodSchowcase-wrapper'>
