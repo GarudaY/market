@@ -12,6 +12,7 @@ const MyButton = ({
   image,
   onClick,
   fontWeight,
+  borderRadius,
 }) => {
   const handleClick = (event) => {
     if (onClick) {
@@ -45,6 +46,7 @@ const MyButton = ({
           height: `${height}px`,
           fontSize: `${fontSize}px`,
           fontWeight: `${fontWeight}px`,
+          borderRadius: `${borderRadius}px`,
         }}
       >
         {image && <img src={image} alt='sad' />}

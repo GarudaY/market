@@ -1,14 +1,16 @@
-import { Link } from 'react-router-dom'
 import MyButton from '../MyButton/MyButton'
 import './Header.scss'
 import HeaderLink from '../HeaderLink/HeaderLink'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
     <div className='header'>
       <div className='header__leftSide'>
         <div className='header__logo'>
-          <img src='/static/logo.png' alt='logo' />
+          <Link to='/'>
+            <img src='/static/logo.png' alt='logo' />
+          </Link>
         </div>
         <div>
           <MyButton
@@ -32,7 +34,7 @@ const Header = () => {
         </div>
         <div className='header__rightSide__navBox'>
           <MyButton
-            link='/SchoppingCart'
+            link='/shoppingCart'
             width='30'
             height='30'
             image='/static/box.png'

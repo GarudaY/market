@@ -7,27 +7,29 @@ const DworfBanner = () => {
   const [phoneNumber, setPhoneNumber] = useState('')
 
   const handleInputChange = (event) => {
-    setPhoneNumber(event.target.value)
+    const newPhoneNumber = event.target.value
+    setPhoneNumber(newPhoneNumber)
   }
 
-  const sendRequest = () => {
-    fetch('http://localhost:3333/sale/send', {
-      method: 'POST',
-      body: JSON.stringify({ phoneNumber }),
-      headers: {
-        'Content-Type': 'json',
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log('Ok')
-        } else {
-          console.error('Error!')
-        }
+  const sendRequest = async () => {
+    try {
+      const response = await fetch('http://localhost:3333/sale/send', {
+        method: 'POST',
+        body: JSON.stringify({ phoneNumber }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
-      .catch((error) => {
-        console.error(error)
-      })
+
+      if (response.ok) {
+        console.log(response.statusText)
+      } else {
+        throw new Error('Error!')
+      }
+    } catch (error) {
+      console.error(error)
+      window.location.replace('/error')
+    }
   }
 
   return (
@@ -39,7 +41,12 @@ const DworfBanner = () => {
           on the first order
         </h2>
         <div className='dwarf-banner__contentSide__input'>
-          <MyInput view='handyNummer' onChange={handleInputChange} />
+          <MyInput
+            view='my-input'
+            width='473'
+            placeholder='+49'
+            onChange={handleInputChange}
+          />
         </div>
         <div>
           <MyButton

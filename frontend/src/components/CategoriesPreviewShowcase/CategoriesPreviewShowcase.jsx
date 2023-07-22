@@ -61,6 +61,7 @@ const CategoriesPreviewShowcase = ({ category, title }) => {
                 image={item.image}
                 id={item.id}
                 onClick={() => dispatch(selectCategory(item.id))}
+                quantity={1}
               />
             ))}
       </div>

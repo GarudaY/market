@@ -1,0 +1,95 @@
+.shopping-cart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 140px;
+  min-height: 500px;
+
+  &__cartSide {
+    max-width: 830px;
+    width: 100%;
+    margin-right: 10px;
+    &__topWrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      :last-child {
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+      &__title {
+        margin-bottom: 60px;
+      }
+      &__linkWrapper {
+        display: flex;
+
+        align-items: center;
+        width: 100%;
+        max-width: 220px;
+        justify-content: space-between;
+        &__link {
+          display: flex;
+          color: darkgray;
+          text-decoration: none;
+          justify-content: space-between;
+          font-size: 20px;
+
+          :visited {
+            color: darkgray;
+          }
+          svg {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    &__divider {
+      max-width: 830px;
+    }
+    &__emptyBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      margin-top: 100px;
+    }
+  }
+  &__orderSide {
+    max-width: 500px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 40px;
+    border: 2px solid black;
+    margin-top: 50px;
+    &__title {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 36px;
+      letter-spacing: 0.03em;
+      margin-bottom: 50px;
+    }
+    &__totalPriceWrapper {
+      display: flex;
+      justify-content: space-between;
+      &__total {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 31px;
+        margin-bottom: 50px;
+      }
+      &__totalPrice {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 42px;
+        letter-spacing: 0.03em;
+      }
+    }
+    &__input {
+      border: 2px solid darkgray;
+      border-radius: 25px;
+      margin-bottom: 30px;
+    }
+  }
+}

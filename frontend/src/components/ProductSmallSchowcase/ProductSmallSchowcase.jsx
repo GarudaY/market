@@ -15,7 +15,7 @@ const ProductSmallSchowcase = () => {
   const navigate = useNavigate()
   const searchParams = new URLSearchParams(location.search)
   const [filteredProducts, setFilteredProducts] = useState([])
-  const [sortValue, setSortValue] = useState('')
+  const [sortValue, setSortValue] = useState('desc')
 
   const handleFilter = (fromPrice, toPrice, showDiscountedItems, sortValue) => {
     searchParams.set('fromPrice', fromPrice)
@@ -54,9 +54,9 @@ const ProductSmallSchowcase = () => {
       sortedProducts = sortedProducts.filter((item) => item.price <= toPrice)
     }
 
-    if (sortValue === 'asc') {
+    if (sortValue === 'desc') {
       sortedProducts = sortedProducts.sort((a, b) => a.price - b.price)
-    } else if (sortValue === 'desc') {
+    } else if (sortValue === 'asc') {
       sortedProducts = sortedProducts.sort((a, b) => b.price - a.price)
     }
 
@@ -101,7 +101,6 @@ const ProductSmallSchowcase = () => {
       ? 'Products with sale'
       : categories.find((category) => category.id === parseInt(categoryName))
           ?.title || 'Sales'
-
   return (
     <div className='prodSchowcase-wrapper'>
       <h2 className='prodSchowcase-wrapper__title'>{pageTitle}</h2>
@@ -121,8 +120,10 @@ const ProductSmallSchowcase = () => {
             title={item.title}
             image={item.image}
             id={item.id}
-            discontPrice={item.discont_price}
+            discont_price={item.discont_price}
             price={item.price}
+            description={item.description}
+            quantity={item.quantity}
           />
         ))}
       </div>

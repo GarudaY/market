@@ -1,3 +1,4 @@
+// ProductPage.js
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -6,6 +7,7 @@ import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import MyButton from '../../components/MyButton/MyButton'
 import './ProductPage.scss'
+import { addToCart } from '../../redux/actions/cartActions'
 
 const ProductPage = () => {
   const dispatch = useDispatch()
@@ -13,6 +15,7 @@ const ProductPage = () => {
   const products = useSelector((state) => state.products)
   const [loading, setLoading] = useState(true)
   const selectedProduct = useSelector((state) => state.selectedProduct)
+  const cart = useSelector((state) => state.cart)
 
   useEffect(() => {
     const filteredProduct = products.find((item) => item.id === parseInt(id))
@@ -45,6 +48,9 @@ const ProductPage = () => {
 
   if (!selectedProduct) {
     return <div>Product not found.</div>
+  }
+  const handleAddToCart = () => {
+    dispatch(addToCart(selectedProduct))
   }
 
   return (
@@ -100,6 +106,7 @@ const ProductPage = () => {
             fontSize='28'
             fontWeight='700'
             link='/shoppingCart'
+            onClick={handleAddToCart}
           ></MyButton>
           <hr className='product-page-wrapper__descrSide__divider' />
           <p className='product-page-wrapper__descrSide__descr'>

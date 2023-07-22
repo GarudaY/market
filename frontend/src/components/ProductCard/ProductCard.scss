@@ -3,9 +3,17 @@
   flex-direction: column;
   width: 320px;
   margin-bottom: 40px;
+  position: relative;
+
+  &:hover {
+    .product-card-wrapper__hoverBtn {
+      opacity: 1;
+    }
+  }
   &__link {
     all: unset;
     cursor: pointer;
+    width: 318px;
     &__container {
       margin-bottom: 15px;
       &__img {
@@ -40,5 +48,30 @@
       font-weight: 500;
       padding: 0 20px;
     }
+  }
+  &__hoverBtn {
+    position: absolute;
+    top: 260px;
+    left: 19px;
+    width: 280px;
+    height: 75px;
+    background-color: #f1fff1;
+    color: #339933;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #339933;
+    border-radius: 25px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__addedToCartBefore {
+    opacity: 0;
+  }
+  &__addedToCartAfter {
+    opacity: 1;
   }
 }

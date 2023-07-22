@@ -1,14 +1,41 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './MyInput.scss'
 
-const MyInput = ({ view, onChange, value, placeholder, checked }) => {
+const MyInput = ({ view, onChange, value, placeholder, checked, width }) => {
+  const [inputValue, setInputValue] = useState(value || '')
+
+  useEffect(() => {
+    setInputValue(value || '')
+  }, [value])
+
   const handleChange = (event) => {
-    const value = event.target.value
-    onChange(value)
+    const newValue = event.target.value
+    setInputValue(newValue)
+    onChange(newValue)
+  }
+
+  const handleChangeNumber = (event) => {
+    const newInputValue = event.target.value
+    const onlyDigits = /^\d{0,11}$/.test(newInputValue)
+
+    if (onlyDigits) {
+      setInputValue(newInputValue)
+      onChange(event)
+    }
   }
 
   const renderInput = () => {
     switch (view) {
+      case 'my-input':
+        return (
+          <input
+            className='my-input'
+            style={{ width: `${width}px` }}
+            value={inputValue}
+            onChange={handleChangeNumber}
+            placeholder={placeholder}
+          />
+        )
       case 'fromTo':
         return (
           <input
@@ -31,9 +58,8 @@ const MyInput = ({ view, onChange, value, placeholder, checked }) => {
       case 'select':
         return (
           <select className='select' value={value} onChange={handleChange}>
-            <option value='default'>Default</option>
-            <option value='asc'>By Price Down</option>
-            <option value='desc'>By Price Up</option>
+            <option value='desc'>By price up</option>
+            <option value='asc'>By price down</option>
           </select>
         )
       default:

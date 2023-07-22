@@ -17,12 +17,17 @@ export const fetchProducts = async () => {
     const response = await fetch('http://localhost:3333/products/all')
     if (response.ok) {
       const data = await response.json()
-      return data
+      const productsWithQuantity = data.map((product) => ({
+        ...product,
+        quantity: 1,
+      }))
+      return productsWithQuantity
     } else {
       throw new Error('Ошибка сети')
     }
   } catch (error) {
     console.error(error)
+    window.location.replace('/error')
     return []
   }
 }

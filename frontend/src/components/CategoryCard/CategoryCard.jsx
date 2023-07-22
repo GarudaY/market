@@ -2,7 +2,7 @@ import React from 'react'
 import './CategoryCard.scss'
 import { Link } from 'react-router-dom'
 
-const CategoryCard = ({ id, title, image, onClick, active }) => {
+const CategoryCard = ({ id, title, image, onClick, active, quantity }) => {
   const handleClick = () => {
     onClick(id)
   }
