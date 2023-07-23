@@ -40,7 +40,7 @@ const CartProduct = ({
   }
 
   const totalPrice = (discont_price || price) * quantity
-
+  const beforeDiscountPrice = price * quantity
   return (
     <div>
       <div className='cartProduct-wrapper'>
@@ -85,16 +85,16 @@ const CartProduct = ({
           <div className='cartProduct-wrapper__content__prices'>
             {discont_price && (
               <p className='cartProduct-wrapper__content__prices__price'>
-                {totalPrice + '$'}
+                {totalPrice.toFixed(2) + '$'}
               </p>
             )}
             {!discont_price ? (
               <p className='cartProduct-wrapper__content__prices__price'>
-                {totalPrice + '$'}
+                {totalPrice.toFixed(2) + '$'}
               </p>
             ) : (
               <p className='cartProduct-wrapper__content__prices__discountPrice'>
-                {price + '$'}
+                {beforeDiscountPrice.toFixed(2) + '$'}
               </p>
             )}
           </div>

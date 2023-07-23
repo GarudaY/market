@@ -5,7 +5,11 @@
   text-decoration: none;
   margin-right: 55px;
   color: black;
+  transition: color 0.5s;
   &:visited {
     color: black;
+  }
+  &:hover {
+    color: #339933;
   }
 }

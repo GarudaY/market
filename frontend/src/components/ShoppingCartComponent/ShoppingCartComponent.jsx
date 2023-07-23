@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './ShoppingCartComponent.scss'
 import { useSelector } from 'react-redux'
 import CartProduct from '../CartProduct/CartProduct'
@@ -9,6 +9,29 @@ import MyButton from '../MyButton/MyButton'
 const ShoppingCartComponent = () => {
   const productsInCart = useSelector((state) => state.cart)
   const [phoneNumber, setPhoneNumber] = useState('')
+  const [initialTopOffset, setInitialTopOffset] = useState(0)
+
+  useEffect(() => {
+    // Получаем ссылку на ваше окно с помощью его класса
+    const fixedWindow = document.querySelector('.shopping-cart__orderSide')
+
+    const stopHeight = document.body.scrollHeight - 1500
+
+    const initialTopOffset = 200
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || window.pageYOffset
+
+      const newTop = Math.min(stopHeight - scrollTop, initialTopOffset)
+      fixedWindow.style.top = `${newTop}px`
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleInputChange = (event) => {
     const newPhoneNumber = event.target.value

@@ -55,9 +55,17 @@ const ProductSmallSchowcase = () => {
     }
 
     if (sortValue === 'desc') {
-      sortedProducts = sortedProducts.sort((a, b) => a.price - b.price)
+      sortedProducts = sortedProducts.sort((a, b) => {
+        const priceA = a.discont_price || a.price
+        const priceB = b.discont_price || b.price
+        return priceA - priceB
+      })
     } else if (sortValue === 'asc') {
-      sortedProducts = sortedProducts.sort((a, b) => b.price - a.price)
+      sortedProducts = sortedProducts.sort((a, b) => {
+        const priceA = a.discont_price || a.price
+        const priceB = b.discont_price || b.price
+        return priceB - priceA
+      })
     }
 
     setFilteredProducts(sortedProducts)

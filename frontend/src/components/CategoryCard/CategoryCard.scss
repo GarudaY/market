@@ -6,6 +6,14 @@
     width: 318px;
     height: 350px;
     margin-bottom: 10px;
+    border-radius: 25px;
+    transition: box-shadow 0.2s;
+    &:hover {
+      box-shadow: 0px 0px 5px black;
+      .product-card-wrapper__hoverBtn {
+        opacity: 1;
+      }
+    }
   }
   &__title {
     display: flex;

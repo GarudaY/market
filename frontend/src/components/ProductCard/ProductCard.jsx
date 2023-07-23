@@ -51,17 +51,18 @@ const ProductCard = ({
           {!discont_price ? (
             <React.Fragment>
               <p className='product-card-wrapper__link__prices__price'>
-                {price + '$'}
+                {price.toFixed(2) + '$'}
               </p>
             </React.Fragment>
           ) : (
             <React.Fragment>
               <p className='product-card-wrapper__link__prices__price'>
-                {price + '$'}
+                {discont_price.toFixed(2) + '$'}
               </p>
               <p className='product-card-wrapper__link__prices__discount'>
-                {discont_price + '$'}
+                {price.toFixed(2) + '$'}
               </p>
+
               <p className='product-card-wrapper__link__prices__discPercentage'>
                 {discontPercentage + '%'}
               </p>

@@ -58,8 +58,8 @@ const MyInput = ({ view, onChange, value, placeholder, checked, width }) => {
       case 'select':
         return (
           <select className='select' value={value} onChange={handleChange}>
-            <option value='desc'>By price up</option>
-            <option value='asc'>By price down</option>
+            <option value='desc'>From low to high</option>
+            <option value='asc'>From high to low</option>
           </select>
         )
       default:

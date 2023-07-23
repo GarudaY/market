@@ -2,20 +2,48 @@
   &__full-btn {
     border-radius: 5px;
     border: 2px solid transparent;
-    background-color: var(--green-color);
+    background-color: #339933;
     color: white;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+    &:hover {
+      background-color: #3db73d;
+      border-color: #009900;
+      transform: scale(1.03);
+    }
+    &:active {
+      background-color: #3db73d;
+      border-color: #009900;
+      transform: scale(0.95);
+    }
   }
 
   &__empty-btn {
+    position: relative;
     border-radius: 25px;
     border: 2px solid white;
     background-color: transparent;
     letter-spacing: 3px;
     color: white;
     font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s,
+      transform 0.2s;
+    &:hover {
+      color: #339933;
+      border-color: white;
+      background-color: white;
+      transform: scale(1.02);
+    }
+    &:active {
+      background-color: #e6e6e6;
+      color: #339933;
+      transform: scale(0.99);
+      border-color: transparent;
+    }
   }
 
   &__img-btn {
@@ -26,11 +54,24 @@
     border: none;
     background: transparent;
     cursor: pointer;
-
+    transition: transform 0.1s;
     &__with-text {
       margin-right: 35px;
       border: none;
       background: transparent;
+      transition: transform 0.1s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.99);
+      }
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(0.99);
     }
   }
 
@@ -41,6 +82,21 @@
     letter-spacing: 1px;
     color: black;
     font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s,
+      border-color 0.2s;
+    &:hover {
+      background-color: #b8bdd9;
+      color: white;
+      transform: scale(1.05);
+      border-color: transparent;
+    }
+    &:active {
+      background-color: gray;
+      color: white;
+      transform: scale(0.95);
+      border-color: transparent;
+    }
   }
   &__gray-btn {
     border-radius: 0;
@@ -48,6 +104,21 @@
     color: gray;
     font-weight: 700;
     background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s,
+      border-color 0.2s;
+    &:hover {
+      background-color: gray;
+      color: white;
+      transform: scale(1.05);
+      border-color: transparent;
+    }
+    &:active {
+      background-color: darkgray;
+      color: white;
+      transform: scale(0.95);
+      border-color: transparent;
+    }
   }
 }
 .text {
